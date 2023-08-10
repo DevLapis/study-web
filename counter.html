@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    <style>
+        #c{
+            text-align: center;
+            font-size: 100px;
+        }
+        
+        #count{
+            text-align: center;
+            font-size: 100px;
+        }
+        #st
+        {
+            border: none;
+            text-align: center;
+        }
+        button
+        {
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "c">Counter</div>
+    <div id = "count"></div>
+    <div id = "st">
+    <button id = "De" style="border-color: red;">DECREASE</button>
+    <button id = "Re" style="border-color: black;">RESET</button>
+    <button id = "In" style="border-color: blue;">INCREASE</button>
+    </div>
+    <script>
+        // 조건: 함수를 하나 이상 사용하여 해결하시오
+
+// 1. 함수(서브루틴)
+// 2. 시점(상태)
+
+        function changecount()
+        {
+            document.getElementById("count").textContent = cnt;
+            
+            if(cnt > 0){
+                document.getElementById("count").style.color = 'green';
+            }
+            else if(cnt < 0){
+                document.getElementById("count").style.color = 'red';
+            }
+            else{
+                document.getElementById("count").style.color = 'black';
+            }
+        }
+
+        cnt = 0;
+        document.getElementById("count").textContent = cnt;
+        document.getElementById("De").addEventListener("click", () => { cnt -= 1; changecount(); });
+        document.getElementById("Re").addEventListener("click", () => { cnt = 0; changecount(); });
+        document.getElementById("In").addEventListener("click", () => { cnt += 1; changecount(); });
+
+        // 1. onclick="A()"
+        // 2. addEventListener
+        // 3. .textContent = cnt
+    </script>
+</body>
+</html>
